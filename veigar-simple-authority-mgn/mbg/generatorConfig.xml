@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <classPathEntry location="C:/Users/hp/.m2/repository/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar" />
+  <context id="mbgTables" targetRuntime="MyBatis3">
+    <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"></plugin>
+    <plugin type="io.github.watertao.veigar.mbgplugin.ComponentAnnotationPlugin"></plugin>
+    <commentGenerator>
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://172.190.14.155:3306/apimanage"
+                    userId="apimanage"
+                    password="Apimanage@123">
+    </jdbcConnection>
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+    <javaModelGenerator targetPackage="io.github.watertao.veigar.vsa.mgn.model" targetProject="mbg/output/">
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+    <sqlMapGenerator targetPackage="mapper" targetProject="mbg/output/">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+    <javaClientGenerator type="XMLMAPPER" targetPackage="io.github.watertao.veigar.vsa.mgn.mapper.autogen" targetProject="mbg/output/">
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+    <table tableName="t_auth_department" enableSelectByExample="true" enableDeleteByExample="true"
+           enableCountByExample="true" enableUpdateByExample="true">
+      <generatedKey sqlStatement="Mysql" column="id" identity="true" ></generatedKey>
+    </table>
+    <table tableName="t_auth_resource" enableSelectByExample="true" enableDeleteByExample="true"
+           enableCountByExample="true" enableUpdateByExample="true">
+      <generatedKey sqlStatement="Mysql" column="id" identity="true" ></generatedKey>
+    </table>
+    <table tableName="t_auth_role" enableSelectByExample="true" enableDeleteByExample="true"
+           enableCountByExample="true" enableUpdateByExample="true">
+      <generatedKey sqlStatement="Mysql" column="id" identity="true" ></generatedKey>
+    </table>
+    <table tableName="t_auth_role_resource_rel" enableSelectByExample="true" enableDeleteByExample="true"
+           enableCountByExample="true" enableUpdateByExample="true">
+    </table>
+    <table tableName="t_auth_user" enableSelectByExample="true" enableDeleteByExample="true"
+           enableCountByExample="true" enableUpdateByExample="true">
+      <generatedKey sqlStatement="Mysql" column="id" identity="true" ></generatedKey>
+    </table>
+    <table tableName="t_auth_department" enableSelectByExample="true" enableDeleteByExample="true"
+           enableCountByExample="true" enableUpdateByExample="true">
+    </table>
+  </context>
+</generatorConfiguration>

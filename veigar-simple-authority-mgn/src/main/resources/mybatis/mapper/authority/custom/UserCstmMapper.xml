@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.watertao.veigar.vsa.mgn.mapper.custom.UserCstmMapper">
+
+  <select id="findRolesByUserIds" resultType="java.util.HashMap">
+    <![CDATA[
+
+      select
+        urr.user_id user_id,
+        r.id role_id,
+        r.code code,
+        r.name name,
+        r.level level,
+        r.status status,
+        r.remark remark
+      from
+        t_auth_role r
+      inner join  t_auth_user_role_rel urr on urr.role_id = r.id
+      where
+        urr.user_id in
+
+    ]]>
+
+    <foreach collection="list" item="userId" index="index" open="(" separator="," close=")">
+      <![CDATA[
+
+        #{userId}
+
+      ]]>
+    </foreach>
+
+
+  </select>
+
+</mapper>
